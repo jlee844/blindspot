@@ -11,7 +11,9 @@ blindspot takes your diff, breaks each changed line on purpose, and re-runs only
 the tests that touch it. A line counts as verified when a test actually fails.
 
 ```bash
-pip install blindspot
+git clone https://github.com/jlee844/blindspot && cd blindspot
+pip install -e .
+
 blindspot                              # working tree vs HEAD
 blindspot --rev main                   # a whole branch
 blindspot --tests "pytest -q tests/unit"
@@ -102,3 +104,7 @@ silently report nothing: a `FileDiff` with `__len__` is falsy when empty, so
 `if cur:` dropped every file before reading its hunks; and checking a mutation's
 syntax absolutely — rather than against the original — discards every mutation,
 because a bare indented line never parses on its own.
+
+## Status
+
+Not on PyPI yet — install from source as above. Python 3.10+.
