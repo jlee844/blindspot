@@ -49,7 +49,12 @@ git init -q . && git add -A && git -c user.email=d@d -c user.name=d commit -qm b
 pause
 
 say "Both functions are covered. Coverage says 100%."
-python -m pytest -q >/dev/null 2>&1 && echo "  tests pass"
+if ! python -m pytest -q >/dev/null 2>&1; then
+  echo "  ERROR: the suite did not pass. Is pytest installed?" >&2
+  echo "         pip install -e \".[dev]\"" >&2
+  exit 1     # a demo that silently prints the wrong answer is the exact
+fi           # failure this tool exists to catch
+echo "  tests pass"
 pause
 
 say "Now change one line in each."
