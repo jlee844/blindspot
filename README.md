@@ -105,6 +105,12 @@ silently report nothing: a `FileDiff` with `__len__` is falsy when empty, so
 syntax absolutely — rather than against the original — discards every mutation,
 because a bare indented line never parses on its own.
 
+## Why this exists
+
+Coverage kept telling me lines were covered that nothing asserted on. The full
+write-up, including five failed attempts at a harder version of the problem, is
+[here](https://github.com/jlee844/receipt/blob/main/FINDINGS.md).
+
 ## Status
 
 Not on PyPI yet — install from source as above. Python 3.10+.
