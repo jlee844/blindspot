@@ -1,5 +1,7 @@
 # blindspot
 
+![demo](demo.gif)
+
 **Your agent wrote 200 lines and says the tests pass. Which of those lines would
 a test actually catch a bug in?**
 
@@ -33,7 +35,7 @@ blindspot --tests "pytest -q tests/unit"
   Coverage would call these covered.
 ```
 
-## See it in 20 seconds
+## See it in 10 seconds
 
 ```bash
 ./demo.sh

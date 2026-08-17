@@ -7,7 +7,7 @@
 set -euo pipefail
 
 SLOW=0; [[ "${1:-}" == "--slow" ]] && SLOW=1
-pause() { [[ $SLOW == 1 ]] && sleep "${1:-1.4}" || true; }
+pause() { [[ $SLOW == 1 ]] && sleep "${1:-2.5}" || true; }
 say()   { printf '\n\033[1m%s\033[0m\n' "$1"; }
 
 BS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -64,5 +64,5 @@ git --no-pager diff --unified=0 -- pricing/rules.py | grep -E '^[+-][^+-]' | sed
 pause
 
 say "Which of those two would a test actually catch a bug in?"
-pause 0.8
+pause 1.5
 PYTHONPATH="$BS" python -m blindspot --tests "pytest -q"
