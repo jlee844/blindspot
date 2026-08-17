@@ -33,6 +33,27 @@ blindspot --tests "pytest -q tests/unit"
   Coverage would call these covered.
 ```
 
+## See it in 20 seconds
+
+```bash
+./demo.sh
+```
+
+Builds a throwaway project with two one-line changes — a discount threshold and
+a shipping threshold — and asks which one a test would actually catch:
+
+```
+GUARDED  pricing/rules.py:2   changed >= -> <     caught by 2 test(s)
+BLIND    pricing/rules.py:8   changed 60 -> 61    no test failed when broken
+```
+
+Both lines are covered. Coverage reports 100%. One of them is checked by a real
+assertion; the other is only reached by `assert shipping(10) is not None`,
+which runs the line and verifies nothing.
+
+The demo cleans up after itself — it works in a temp directory and touches
+nothing you own.
+
 ## The four verdicts
 
 | verdict | meaning |
