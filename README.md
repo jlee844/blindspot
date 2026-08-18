@@ -2,6 +2,12 @@
 
 ![demo](demo.gif)
 
+[![tests](https://img.shields.io/badge/tests-16%20passing-0E6E68)](tests/)
+[![python](https://img.shields.io/badge/python-3.10%2B-0E6E68)](pyproject.toml)
+[![dependencies](https://img.shields.io/badge/dependencies-coverage-0E6E68)](pyproject.toml)
+[![license](https://img.shields.io/badge/license-MIT-666)](LICENSE)
+
+
 **Your agent wrote 200 lines and says the tests pass. Which of those lines would
 a test actually catch a bug in?**
 
@@ -137,3 +143,18 @@ write-up, including five failed attempts at a harder version of the problem, is
 ## Status
 
 Not on PyPI yet — install from source as above. Python 3.10+.
+
+---
+
+## Part of a set
+
+Four small tools that read what an AI coding session actually did, rather than
+what it said it did. Each stands alone; together they cover a session end to
+end.
+
+| | |
+|---|---|
+| [**mission**](https://github.com/jlee844/agent-mission) | the goal, beside the work, that the agent cannot quietly rewrite — plus one live board for every running session |
+| [**receipt**](https://github.com/jlee844/receipt) | what a session did, what it cost, and which of its claims are backed by the filesystem |
+| **blindspot** *(you are here)* | which lines in a change a test would actually catch a bug in — coverage says a line ran, not that anything asserted on it |
+| [**transcript-audit**](https://github.com/jlee844/transcript-audit) | profile a corpus of agent transcripts before computing any statistic over it |
