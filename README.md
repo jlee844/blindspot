@@ -1,15 +1,16 @@
 # blindspot
 
+**Your agent wrote 200 lines and says the tests pass. Which of those lines would
+a test actually catch a bug in?**
+
 ![demo](demo.gif)
 
-[![tests](https://img.shields.io/badge/tests-16%20passing-0E6E68)](tests/)
-[![python](https://img.shields.io/badge/python-3.10%2B-0E6E68)](pyproject.toml)
+[![tests](https://github.com/jlee844/blindspot/actions/workflows/tests.yml/badge.svg)](https://github.com/jlee844/blindspot/actions/workflows/tests.yml)
+[![python](https://img.shields.io/badge/python-3.9%20%E2%80%93%203.14-0E6E68)](pyproject.toml)
 [![dependencies](https://img.shields.io/badge/dependencies-coverage-0E6E68)](pyproject.toml)
 [![license](https://img.shields.io/badge/license-MIT-666)](LICENSE)
 
 
-**Your agent wrote 200 lines and says the tests pass. Which of those lines would
-a test actually catch a bug in?**
 
 Coverage answers a weaker question than everyone reads it as. It tells you a line
 *ran*. It does not tell you anything **asserted** on it — and a line that runs
@@ -125,7 +126,7 @@ output for a week, then decide whether you want it blocking.
 ## Tests
 
 ```bash
-python -m pytest tests/ -q     # 16 tests, no suite runs, no network
+python -m pytest tests/ -q     # no suite runs, no network
 ```
 
 Two are regressions for bugs this tool shipped with, both of which made it
@@ -142,7 +143,7 @@ write-up, including five failed attempts at a harder version of the problem, is
 
 ## Status
 
-Not on PyPI yet — install from source as above. Python 3.10+.
+Not on PyPI yet — install from source as above. Python 3.9 – 3.14, tested on each by CI.
 
 ---
 

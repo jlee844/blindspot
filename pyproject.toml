@@ -2,7 +2,7 @@
 name = "blindspot"
 version = "0.1.0"
 description = "Which lines in this change would a test actually catch a bug in?"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = ["coverage>=7.0"]
 
 [project.optional-dependencies]

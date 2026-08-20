@@ -95,3 +95,15 @@ def test_parseability_is_judged_against_the_original_not_absolutely():
 def test_a_line_out_of_range_returns_none():
     assert mutate_line(SRC, 999) is None
     assert mutate_line(SRC, 0) is None
+
+
+def test_the_readme_does_not_hardcode_a_test_count():
+    """The count went stale in a sibling repo twice; the badge is CI's job now."""
+    import re
+    from pathlib import Path
+    readme = Path(__file__).resolve().parent.parent.joinpath("README.md").read_text(encoding="utf-8")
+    # blindspot's own example output legitimately says "(3 tests touch it)" --
+    # strip fenced code blocks and check only the prose.
+    prose = re.sub(r"```.*?```", "", readme, flags=re.S)
+    stale = re.findall(r"\b\d+\s*tests\b", prose)
+    assert not stale, f"hardcoded test counts in the README: {stale}"
